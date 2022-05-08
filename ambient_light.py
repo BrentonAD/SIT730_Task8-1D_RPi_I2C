@@ -21,14 +21,13 @@ def convertToNumber(data):
 
 def readLight(addr=DEVICE):
   # Read data from I2C interface
-  data = bus.read_i2c_block_data(addr,CONTINUOUS_LOW_RES_MODE)
+  data = bus.read_i2c_block_data(addr,CONTINUOUS_HIGH_RES_MODE_1)
   return convertToNumber(data)
 
 def main():
 
   while True:
     lightLevel=readLight()
-    print("Light Level : " + format(lightLevel,'.2f'))
     if lightLevel <= 20:
         print("too dark")
     elif lightLevel <= 40:
