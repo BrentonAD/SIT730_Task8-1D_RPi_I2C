@@ -29,6 +29,14 @@ def main():
   while True:
     lightLevel=readLight()
     print("Light Level : " + format(lightLevel,'.2f'))
+    if lightLevel <= 20:
+        print("too dark")
+    elif lightLevel <= 40:
+        print("dark")
+    elif lightLevel <= 500:
+        print("bright")
+    else:
+        print("too bright")
     time.sleep(0.5)
 
 if __name__=="__main__":
